@@ -9,7 +9,7 @@ const getTasks = async (req, res) => {
     try {
         const { status, dueDate, priority, page = 1, limit = 10 } = req.query;
         const role = req.user.role;
-        const userId = req.user._id;
+        const userId = req.user.id;
         let filter = {};
         // Role-based access control
         if (role === "User") {

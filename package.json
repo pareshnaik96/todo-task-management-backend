@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Todo task management",
   "main": "index.js",
+  "engines": {
+    "node":"20.x"
+  },
   "scripts": {
     "build": "rm -rf dist && tsc",
     "start": "node dist/index.js",

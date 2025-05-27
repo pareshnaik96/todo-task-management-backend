@@ -32,7 +32,13 @@ const login = async (req, res) => {
     const token = jsonwebtoken_1.default.sign({ id: user._id, role: user.role }, process.env.JWT_SECRET, {
         expiresIn: "1d",
     });
-    res.status(200).json({ message: "logged in", token });
+    const data = {
+        token,
+        _id: user._id,
+        email: user.email,
+        role: user.role
+    };
+    res.status(200).json({ message: "logged in", data });
     return;
 };
 exports.login = login;
